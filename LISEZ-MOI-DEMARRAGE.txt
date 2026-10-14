@@ -1,0 +1,32 @@
+RASEN MARKETPLACE + RASEN NEWS — VERSION SANS SUPABASE
+
+CE PACK CONTIENT
+- index.html : interface améliorée conservant le design du projet Rasen existant.
+- netlify/functions/content.mjs : envoi, lecture des contenus publiés et modération.
+- netlify/functions/admin.mjs : accès protégé à la liste des contenus en attente.
+- admin.html : écran de modération réservé à l’administrateur.
+- netlify.toml et package.json : configuration de déploiement.
+
+FONCTIONNEMENT PRÉVU
+1. Les visiteurs consultent les annonces et mini-journaux publiés.
+2. Un visiteur soumet une annonce ou un mini-journal; l’élément est sauvegardé dans Netlify Blobs avec le statut « pending ».
+3. Rasen Tech reçoit une ouverture WhatsApp de notification après l’envoi.
+4. L’administrateur ouvre /admin.html, saisit la clé secrète ADMIN_KEY et publie ou refuse le contenu.
+5. Les contenus publiés sont visibles par tous les visiteurs; les boutons de contact utilisent WhatsApp.
+
+IMPORTANT — CE N’EST PAS ENCORE EN LIGNE
+Le ZIP est un pack de projet préparé, pas une mise à jour automatique du site Netlify existant. Ne supprime rien sur le site actuel.
+Pour que le stockage partagé fonctionne, il faut déployer le dossier comme un projet Netlify avec Functions/Blobs et définir une variable d’environnement ADMIN_KEY (une clé longue, secrète, jamais partagée publiquement). Un simple téléversement du seul fichier HTML ne suffit pas à activer le serveur.
+
+DÉPLOIEMENT
+- Importer le contenu de ce dossier dans un dépôt GitHub.
+- Dans Netlify, importer ce dépôt comme un nouveau site ou une nouvelle version de projet.
+- Dans les variables d’environnement Netlify, définir ADMIN_KEY avec une valeur secrète.
+- Déployer; tester ensuite la soumission d’une annonce, puis la modération sur /admin.html.
+- Ne jamais mettre ADMIN_KEY dans index.html ni l’envoyer à un vendeur.
+
+LIMITES / SÉCURITÉ
+- Les annonces et mini-journaux soumis restent en attente jusqu’à validation.
+- Le contact saisi par l’annonceur est rendu public uniquement si son annonce est publiée.
+- Ce pack n’intègre pas encore de téléversement de photos; Rasen News accepte un lien d’image HTTPS.
+- Les exemples visuels présents dans la page ne sont pas de vraies annonces et ne représentent pas des vendeurs vérifiés.
