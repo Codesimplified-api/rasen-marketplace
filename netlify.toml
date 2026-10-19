@@ -2,5 +2,12 @@
   publish = "."
   functions = "netlify/functions"
 
-[functions]
-  node_bundler = "esbuild"
+[[redirects]]
+  from = "/api/listings"
+  to = "/.netlify/functions/api?resource=listings"
+  status = 200
+
+[[redirects]]
+  from = "/api/journals"
+  to = "/.netlify/functions/api?resource=journals"
+  status = 200

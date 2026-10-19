@@ -1,0 +1,52 @@
+RASEN MARKETPLACE — PACK COMPLET V3 (SANS SUPABASE)
+===================================================
+
+OBJECTIF
+Offres et demandes, recherche, catégories, contact WhatsApp, mini-journaux Rasen News et publications enregistrées dans un stockage partagé Netlify Blobs.
+
+CE QUI EST CONSERVÉ
+- Interface mobile adaptée au téléphone.
+- Annonces d'offres et de demandes.
+- Recherche par mots-clés, filtres par type et catégories.
+- Exemples visuels clairement marqués comme démonstration.
+- Publication d'annonces et mini-journaux sans boutons Inscription/Connexion.
+- Contact WhatsApp à partir du numéro saisi par l'annonceur.
+- Stockage partagé des publications via Netlify Blobs, sans Supabase.
+
+AMÉLIORATIONS V3
+- Actualisation automatique des annonces et mini-journaux toutes les 30 secondes lorsque la page est ouverte.
+- Messages d'erreur plus précis en cas de problème de publication.
+- Vérifications serveur supplémentaires sur les contenus envoyés.
+
+FICHIERS DU PACK
+- index.html : site complet.
+- netlify/functions/api.mjs : API des annonces et mini-journaux.
+- netlify.toml : configuration et routes de l'API.
+- package.json : dépendance Netlify Blobs.
+
+IMPORTANT — NE PAS CASSER LE SITE ACTUEL
+La création de ce ZIP ne modifie pas le site en ligne https://rasen-marketplace.netlify.app.
+Avant de remplacer des fichiers dans le dépôt existant, conserver une copie de sauvegarde. Ce pack est prévu pour être déployé comme projet complet via le dépôt GitHub relié à Netlify. Ne pas téléverser seulement index.html : les fonctions serveur seraient absentes.
+
+DÉPLOIEMENT
+1. Extraire le ZIP.
+2. Mettre le CONTENU du dossier Rasen_Marketplace_V3 à la racine du dépôt GitHub relié au projet Netlify (index.html, package.json, netlify.toml et dossier netlify).
+3. Si le dépôt contient déjà le site, faire une copie de sauvegarde avant de remplacer quoi que ce soit. Ne pas supprimer d'autres fichiers du projet sans les vérifier.
+4. Laisser Netlify lancer le déploiement et vérifier que le déploiement est publié avec succès.
+5. Ouvrir le site, publier une annonce test et un mini-journal test.
+6. Ouvrir le site dans un autre navigateur ou téléphone, puis vérifier que les deux publications apparaissent.
+7. Tester les boutons de contact WhatsApp avec un numéro au format international, par exemple +25762182774.
+
+À SAVOIR
+- L'enregistrement partagé dépend du déploiement effectif des Netlify Functions et de Netlify Blobs. Le ZIP seul ne met pas le site à jour.
+- Aucun compte utilisateur ni modération avant publication n'est activé dans cette version. Les publications sont publiques : ne pas envoyer de mots de passe, données sensibles ou contenus illégaux.
+- Les fonctions serveur sont prévues pour un déploiement Netlify connecté à Git et avec la dépendance du package installée.
+- Les publications sont limitées à 300 éléments par catégorie de contenu.
+
+
+NOUVEAUTÉ V3 — PHOTOS DANS LES ANNONCES
+- Le formulaire d'annonce accepte une photo facultative depuis le téléphone.
+- La photo est redimensionnée et compressée dans le navigateur avant l'envoi.
+- L'aperçu s'affiche avant publication et la photo apparaît sur la fiche d'annonce.
+- La photo est incluse dans les données de l'annonce lors du déploiement de l'API Netlify avec Netlify Blobs.
+- Pour limiter le stockage et la consommation de données, une seule photo par annonce est prévue.
